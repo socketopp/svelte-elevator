@@ -1,0 +1,10 @@
+name = "[insert-name-here]"
+
+compatibility_date = "2023-07-02"
+
+account_id = "[account-id-here]"
+
+[[kv_namespaces]]
+binding = "ELEVATOR"
+id = "[production-id]"
+preview_id = "[preview_id]"
