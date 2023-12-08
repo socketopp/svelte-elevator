@@ -35,11 +35,12 @@ npm install
 npm run dev
 ```
 
-This is to setup a proxy for your Cloudflare KV to your remote config explained below (Using Cloudflare KV)
+3. Run a proxy server.
+   This is to setup a proxy for your Cloudflare KV to your remote config explained below (Using Cloudflare KV)
 
-````bash
-wrangler dev node_modules/wrangler-proxy/dist/worker.js --remote```bash
-````
+```bash
+wrangler dev node_modules/wrangler-proxy/dist/worker.js --remote
+```
 
 Open your browser and navigate to http://localhost:5173 to view the application.
 
@@ -49,15 +50,13 @@ This project relies on Cloudflare KV for backend storage. Make sure to configure
 
 1. Edit the `wrangler.toml` file with your own information:
 
-```toml
-name = "[insert-name-here]"
+```js
+name = '[insert-name-here]';
 
-compatibility_date = "2023-07-02"
+compatibility_date = '2023-07-02';
 
-account_id = "[account-id-here]"
-
-[[kv_namespaces]]
-binding = "ELEVATOR"
-id = "[production-id]"
-preview_id = "[preview_id]"
+account_id = '[account-id-here]'[[kv_namespaces]];
+binding = 'ELEVATOR';
+id = '[production-id]';
+preview_id = '[preview_id]';
 ```
