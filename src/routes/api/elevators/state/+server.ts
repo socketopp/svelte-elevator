@@ -23,9 +23,9 @@ export const GET: RequestHandler = async ({ locals: { ELEVATOR } }) => {
 
 export const POST: RequestHandler = async ({ request, locals: { ELEVATOR } }) => {
   const { elevatorPositions } = (await request.json()) as ElevatorState;
-  Object.keys(elevatorPositions).forEach(async (elevatorId) => {
+  for (const elevatorId of Object.keys(elevatorPositions)) {
     await ELEVATOR.put(elevatorId, JSON.stringify(elevatorPositions[elevatorId]));
-  });
+  }
   return new Response();
 };
 
